@@ -47,12 +47,12 @@ def predict():
     # prediction= model.predict(data)[0]
 
     # NOTE: manually define and pass the array(s) of values to be scored in the next line
-    payload_scoring = {"input_data": [{"fields": [["age","gender","tb","db","ap","aa1","aa2","tp","a","agr"]], "values": [data]}]}
+    payload_scoring = {"input_data": [{"fields": [["age","gender","tb","db","ap","aa1","aa2","tp","a","agr"]], "values": data}]}
 
     response_scoring = requests.post('https://us-south.ml.cloud.ibm.com/ml/v4/deployments/2540817a-d671-4662-8619-fc58b53b2c4c/predictions?version=2022-06-03', json=payload_scoring,
     headers={'Authorization': 'Bearer ' + mltoken})
     print("Response")
-    # print(response_scoring.json())
+    print(response_scoring.json())
     pred = response_scoring.json()['predictions'][0]['values'][0][0]
     print(pred)
 
@@ -62,4 +62,4 @@ def predict():
         return render_template('noChance.html', prediction='You dont have a liver disease problem')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
