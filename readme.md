@@ -1,4 +1,4 @@
-# Liver Patient Analysis
+# Saikat Sahana - Applied Data Science Project - SmartInternz Externship - Liver Patient Data Analysis
 
 > <br>By, Team 17: <br>
 > 1. Saikat Sahana <br>
